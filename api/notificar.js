@@ -1,45 +1,11 @@
-Skip to content
-Navigation Menu
-Genaro-web
-comprasbot
-
-Type / to search
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-1
-Insights
-Settings
-comprasbot/api
-/compra.js
-Go to file
-t
-Genaro-web
-Genaro-web
-fix
-86627fd
- · 
-yesterday
-comprasbot/api
-/compra.js
-
-Code
-
-Blame
-182 lines (157 loc) · 8.53 KB
-async function sendTelegramMessage(text) {
 // ACTUALIZADO /api/compra.js con Notificaciones de Inicio/Fin de Ráfaga
 
 const fetch = require('node-fetch');
 const admin = require('firebase-admin');
 
 // --- CONFIGURACIÓN ---
-const BOT_TOKEN = ''; // 👈 ¡TU NUEVO TOKEN DE TELEGRAM!
-const CHAT_ID = '737845666';           // 👈 Tu Chat ID
+const BOT_TOKEN = process.env.BOT_TOKEN; // 👈 ¡TU NUEVO TOKEN DE TELEGRAM!
+const CHAT_ID = process.env.CHAT_ID;           // 👈 Tu Chat ID
 const EXPECTED_SCHEME = 'chrome-extension://';
 const TODAS_LAS_CUENTAS = ['438797', '361275', '013286', '063191', '037647', '256798', '066879', '046998', '054881', '054569', '183117', '055097']; // Debe coincidir con background.js
 
@@ -214,4 +180,3 @@ console.log(`[LOG] Request received. Origin: ${req.headers.origin || 'Unknown'}`
         });
     }
 };
-comprasbot/api/compra.js at main · Genaro-web/comprasbot 
